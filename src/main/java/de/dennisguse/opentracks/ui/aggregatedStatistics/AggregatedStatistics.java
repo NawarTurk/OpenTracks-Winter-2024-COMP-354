@@ -166,14 +166,18 @@ public class AggregatedStatistics {
         }
 
         public double getMaxVertical() {
-            double value = trackStatistics.getMaxAltitude();
-            double roundedValue = round(value, 2);
-            return roundedValue;
+            boolean hasMaxAlt = trackStatistics.hasAltitudeMax();
+            if(hasMaxAlt) {
+                double value = trackStatistics.getMaxAltitude();
+                double roundedValue = round(value, 2);
+                return roundedValue;
+            }
+            return 0;
         }
 
         public static double round(double value, int places) {
             if (places < 0) throw new IllegalArgumentException();
-
+            System.out.println("valueeeeee:, " + value);
             BigDecimal bd = BigDecimal.valueOf(value);
             bd = bd.setScale(places, RoundingMode.HALF_UP);
             return bd.doubleValue();
