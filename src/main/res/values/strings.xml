@@ -821,4 +821,14 @@ limitations under the License.
     <string name="daily_max_speed_label">MAX SPEED</string>
     <string name="daily_max_speed_number">0</string>
     <string name="daily_max_speed_unit">km/h</string>
+    <string name="lift_name">Lift Name</string>
+    <string name="lift_specific_elevation_gain_unit">km</string>
+    <string name="lift_specific_elevation_gain_label">Elevation Gain</string>
+    <string name="lift_specific_avg_speed_label">Average Speed</string>
+    <string name="lift_specific_total_time">1:00:00</string>
+    <string name="lift_specific_total_time_label">Total Time</string>
+    <string name="lift_specific_total_time_unit">hr</string>
+    <string name="lift_specific_moving_time">00:55:17</string>
+    <string name="lift_specific_moving_time_label">Moving Time</string>
+    <string name="lift_specific_moving_time_unit">hr</string>
 </resources>
