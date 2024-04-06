@@ -3,6 +3,7 @@ package de.dennisguse.opentracks.ui.aggregatedStatistics;
 import android.content.Context;
 import android.util.Pair;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -18,7 +19,6 @@ import de.dennisguse.opentracks.data.models.ActivityType;
 import de.dennisguse.opentracks.data.models.DistanceFormatter;
 import de.dennisguse.opentracks.data.models.SpeedFormatter;
 import de.dennisguse.opentracks.databinding.AggregatedDailyStatsListItemBinding;
-import de.dennisguse.opentracks.databinding.AggregatedStatsListItemBinding;
 import de.dennisguse.opentracks.settings.PreferencesUtils;
 import de.dennisguse.opentracks.settings.UnitSystem;
 import de.dennisguse.opentracks.util.StringUtils;
@@ -29,16 +29,21 @@ public class AggregatedDayStatisticsAdapter extends RecyclerView.Adapter<Recycle
     private SimpleDateFormat formatter = new SimpleDateFormat("MM dd yyy");
 
     private final Context context;
+    private OnButtonClickListener listener;
 
-    public AggregatedDayStatisticsAdapter(Context context, AggregatedStatistics aggregatedStatistics) {
+    public AggregatedDayStatisticsAdapter(Context context, AggregatedStatistics aggregatedStatistics, OnButtonClickListener listener) {
         this.context = context;
         this.aggregatedStatistics = aggregatedStatistics;
+        this.listener = listener;
     }
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(AggregatedDailyStatsListItemBinding.inflate(LayoutInflater.from(parent.getContext())));
+//        return new ViewHolder(AggregatedDailyStatsListItemBinding.inflate(LayoutInflater.from(parent.getContext())));
+        AggregatedDailyStatsListItemBinding binding = AggregatedDailyStatsListItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new ViewHolder(binding, listener);
     }
 
     @Override
@@ -85,6 +90,21 @@ public class AggregatedDayStatisticsAdapter extends RecyclerView.Adapter<Recycle
         public ViewHolder(AggregatedDailyStatsListItemBinding viewBinding) {
             super(viewBinding.getRoot());
             this.viewBinding = viewBinding;
+        }
+
+        public ViewHolder(AggregatedDailyStatsListItemBinding viewBinding, final OnButtonClickListener listener) {
+            super(viewBinding.getRoot());
+            this.viewBinding = viewBinding;
+
+            viewBinding.specificStatsButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.onButtonClicked(position);
+                    }
+                }
+            });
         }
 
         public void setSpeed(AggregatedStatistics.AggregatedStatistic aggregatedStatistic) {
@@ -181,7 +201,9 @@ public class AggregatedDayStatisticsAdapter extends RecyclerView.Adapter<Recycle
 
             //Activity type
             viewBinding.activityTypeLabel.setText(String.valueOf(aggregatedStatistic.getActivityTypeLocalized()));
+
         }
+
 
         private int getIcon(AggregatedStatistics.AggregatedStatistic aggregatedStatistic) {
             String localizedActivityType = aggregatedStatistic.getActivityTypeLocalized();
@@ -189,4 +211,9 @@ public class AggregatedDayStatisticsAdapter extends RecyclerView.Adapter<Recycle
                     .getIconDrawableId();
         }
     }
+
+    public interface OnButtonClickListener {
+        void onButtonClicked(int position);
+    }
+
 }

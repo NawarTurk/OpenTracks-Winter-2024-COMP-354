@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -66,6 +67,7 @@ public class LiftStatsActivityAdapter extends RecyclerView.Adapter<LiftStatsActi
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         private final LiftStatsBinding binding;
+        Button specificStatButton;
         public ViewHolder(LiftStatsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

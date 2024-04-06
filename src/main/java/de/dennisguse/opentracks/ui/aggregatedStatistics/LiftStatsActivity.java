@@ -21,7 +21,7 @@ public class LiftStatsActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.lift_run_stats);
 
-        //Test data
+        //Test purpose only, will use actual data once confirmed with Group 7
         List<LiftStats> testData = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             testData.add(new LiftStats("Lift " + i, i * 10.0));

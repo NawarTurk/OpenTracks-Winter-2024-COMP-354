@@ -23,13 +23,13 @@
                 app:navigationIcon="@drawable/ic_statistics_24dp"
                 app:title="@string/menu_aggregated_statistics" />
 
-            <Button
-                android:id="@+id/specific_stats_button"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:layout_marginRight="10dp"
-                android:padding="0dp"
-                android:text="@string/specific_stats_button" />
+<!--            <Button-->
+<!--                android:id="@+id/specific_stats_button"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:padding="0dp"-->
+<!--                android:text="@string/specific_stats_button" />-->
 
             <Switch
                 android:id="@+id/aggregated_stats_daily_switch"

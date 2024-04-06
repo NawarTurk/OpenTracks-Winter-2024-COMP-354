@@ -23,7 +23,7 @@ import de.dennisguse.opentracks.R;
 import de.dennisguse.opentracks.data.TrackSelection;
 import de.dennisguse.opentracks.data.models.Track;
 import de.dennisguse.opentracks.databinding.AggregatedStatsBinding;
-public class AggregatedStatisticsActivity extends AbstractActivity implements FilterDialogFragment.FilterDialogListener {
+public class AggregatedStatisticsActivity extends AbstractActivity implements FilterDialogFragment.FilterDialogListener, AggregatedDayStatisticsAdapter.OnButtonClickListener {
 
     public static final String EXTRA_TRACK_IDS = "track_ids";
 
@@ -42,6 +42,7 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
     private MenuItem clearFilterItem;
 
     private boolean isDailyView = false;
+    Button specificStatsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,7 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         adapter = new AggregatedStatisticsAdapter(this, null);
-        dayAdapter = new AggregatedDayStatisticsAdapter(this, null);
+        dayAdapter = new AggregatedDayStatisticsAdapter(this, null, this::onButtonClicked);
         viewBinding.aggregatedStatsList.setLayoutManager(layoutManager);
 
         viewModel = new ViewModelProvider(this).get(AggregatedStatisticsModel.class);
@@ -69,25 +70,6 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
         toggleAdapter();
 
         setSupportActionBar(viewBinding.bottomAppBarLayout.bottomAppBar);
-
-        Button specificStatsButton = findViewById(R.id.specific_stats_button);
-        if (specificStatsButton != null){
-            specificStatsButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayLiftSpecificStats();
-                }
-            });
-        }
-        else{
-            Log.e("AggregatedStatisticsActivity", "specificStatsButton is null because it's not found in the layout.");
-        }
-
-    }
-
-    private void displayLiftSpecificStats() {
-        Intent intent = new Intent(AggregatedStatisticsActivity.this, LiftStatsActivity.class);
-        startActivity(intent);
     }
 
     private void toggleAdapter() {
@@ -108,7 +90,6 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
                 checkListEmpty();
             });
         }
-
     }
 
     private void checkListEmpty() {
@@ -178,5 +159,11 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
         selection.addDateRange(from.atZone(ZoneId.systemDefault()).toInstant(), to.atZone(ZoneId.systemDefault()).toInstant());
         filterItems.stream().filter(fi -> fi.isChecked).forEach(fi -> selection.addActivityType(fi.value));
         viewModel.updateSelection(selection);
+    }
+
+    @Override
+    public void onButtonClicked(int position) {
+        Intent intent = new Intent(AggregatedStatisticsActivity.this, LiftStatsActivity.class);
+        startActivity(intent);
     }
 }
