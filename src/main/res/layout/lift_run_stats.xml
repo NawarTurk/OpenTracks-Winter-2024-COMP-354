@@ -17,13 +17,14 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
+
             <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/lift_run_statistics_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:navigationIcon="@drawable/ic_statistics_24dp"
-                app:title="Lift Specific Stats" />
-
+                app:title="@string/lift_statistics" />
 
             <Switch
                 android:id="@+id/lift_run_switch"

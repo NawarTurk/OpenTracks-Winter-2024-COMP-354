@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +21,10 @@ import de.dennisguse.opentracks.databinding.LiftStatsBinding;
 
 public class LiftStatsActivity extends AppCompatActivity {
     private boolean isRun = false;
-    private LiftRunStatsBinding viewBinding;
     private LiftStatsActivityAdapter liftAdapter;
     private RunDetailStatsAdapter runAdapter;
     private RecyclerView recyclerView;
+    private MaterialToolbar title;
 
 
     @Override
@@ -45,6 +47,7 @@ public class LiftStatsActivity extends AppCompatActivity {
         liftAdapter = new LiftStatsActivityAdapter(this, testLiftData);
         runAdapter = new RunDetailStatsAdapter(this, testRunData);
 
+        title = findViewById(R.id.lift_run_statistics_title);
         recyclerView = findViewById(R.id.lift_run_statistics);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setVisibility(View.VISIBLE);
@@ -63,8 +66,10 @@ public class LiftStatsActivity extends AppCompatActivity {
     private void toggleAdapter() {
         if (isRun) {
             recyclerView.setAdapter(runAdapter);
+            title.setTitle(R.string.run_statistics);
         } else {
             recyclerView.setAdapter(liftAdapter);
+            title.setTitle(R.string.lift_statistics);
         }
     }
 }

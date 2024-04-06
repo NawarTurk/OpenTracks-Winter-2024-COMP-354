@@ -836,6 +836,9 @@ limitations under the License.
     <string name="lift_run_switch">Lift/Run</string>
     <string name="test">this is the recycler text</string>
     <string name="lift_specific_avg_speed_unit">km/h</string>
+    <string name="lift_statistics">Lift Specific Statistics</string>
+    <string name="run_statistics">Run Specific Statistics</string>
+
 
     <!-- Labels for the run statistics -->
     <string name="maximum_speed_label">Maximum Speed</string>
