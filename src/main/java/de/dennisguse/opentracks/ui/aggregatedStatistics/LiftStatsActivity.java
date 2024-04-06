@@ -22,6 +22,7 @@ public class LiftStatsActivity extends AppCompatActivity {
     private LiftRunStatsBinding viewBinding;
     private LiftStatsActivityAdapter liftAdapter;
     private RunDetailStatsAdapter runAdapter;
+    private RecyclerView recyclerView;
 
 
     @Override
@@ -44,7 +45,7 @@ public class LiftStatsActivity extends AppCompatActivity {
         liftAdapter = new LiftStatsActivityAdapter(this, testLiftData);
         runAdapter = new RunDetailStatsAdapter(this, testRunData);
 
-        RecyclerView recyclerView = findViewById(R.id.lift_run_statistics);
+        recyclerView = findViewById(R.id.lift_run_statistics);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setVisibility(View.VISIBLE);
 
@@ -60,8 +61,6 @@ public class LiftStatsActivity extends AppCompatActivity {
     }
 
     private void toggleAdapter() {
-        RecyclerView recyclerView = findViewById(R.id.lift_run_statistics);
-
         if (isRun) {
             recyclerView.setAdapter(runAdapter);
         } else {
