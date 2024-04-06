@@ -13,8 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.dennisguse.opentracks.R;
+import de.dennisguse.opentracks.databinding.AggregatedStatsBinding;
+import de.dennisguse.opentracks.databinding.LiftRunStatsBinding;
+import de.dennisguse.opentracks.databinding.LiftStatsBinding;
 
 public class LiftStatsActivity extends AppCompatActivity {
+    private boolean isRun = false;
+    private LiftRunStatsBinding viewBinding;
+    private LiftStatsActivityAdapter liftAdapter;
+    private RunDetailStatsAdapter runAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,32 +31,41 @@ public class LiftStatsActivity extends AppCompatActivity {
         setContentView(R.layout.lift_run_stats);
 
         //Test purpose only, will use actual data once confirmed with Group 7
-        List<LiftStats> testData = new ArrayList<>();
+        List<LiftStats> testLiftData = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
-            testData.add(new LiftStats("Lift " + i, i * 10.0));
+            testLiftData.add(new LiftStats("Lift " + i, i * 10.0));
+        }
+        //Test purpose only, will use actual data once confirmed with Group 7
+        List<RunDetailStats> testRunData = new ArrayList<>();
+        for (int i = 1; i <= 5; i++) {
+            testRunData.add(new RunDetailStats("500km", i * 10.0));
         }
 
-        RecyclerView recyclerView = findViewById(R.id.recycler);
+        liftAdapter = new LiftStatsActivityAdapter(this, testLiftData);
+        runAdapter = new RunDetailStatsAdapter(this, testRunData);
+
+        RecyclerView recyclerView = findViewById(R.id.lift_run_statistics);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setVisibility(View.VISIBLE);
 
-        LiftStatsActivityAdapter adapter = new LiftStatsActivityAdapter(LiftStatsActivity.this, testData);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(liftAdapter);
 
         //Need to implement the toggle to display run specific stats...
         Switch liftRunSwitch = findViewById(R.id.lift_run_switch);
         liftRunSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                // Change the content view to run_details_stats layout
-                setContentView(R.layout.run_detail_stats);
-                // Note: This will remove all the existing views including the switch itself.
-                // You'll need to re-initialize all the views you want to interact with in the new layout.
-            } else {
-                // If you want to go back to the original layout when the switch is off,
-                // you would set the content view back to the original layout.
-                setContentView(R.layout.lift_run_stats);
-                // Remember to re-initialize all the views after setting the content view.
-            }
+            isRun = isChecked;
+            toggleAdapter();
         });
+        toggleAdapter();
+    }
+
+    private void toggleAdapter() {
+        RecyclerView recyclerView = findViewById(R.id.lift_run_statistics);
+
+        if (isRun) {
+            recyclerView.setAdapter(runAdapter);
+        } else {
+            recyclerView.setAdapter(liftAdapter);
+        }
     }
 }
