@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
 
-public class RunDetail {
+public class RunDetailStats {
     private String maximumSpeed;
     private String averageSpeed;
     private Duration runDuration;
@@ -13,7 +13,7 @@ public class RunDetail {
     private double slope;
 
     // Constructor with all the parameters
-    public RunDetail(String maximumSpeed, String averageSpeed, Duration runDuration, double totalDistance, double elevation, double slope) {
+    public RunDetailStats(String maximumSpeed, String averageSpeed, Duration runDuration, double totalDistance, double elevation, double slope) {
         this.maximumSpeed = maximumSpeed;
         this.averageSpeed = averageSpeed;
         this.runDuration = runDuration;
@@ -23,13 +23,13 @@ public class RunDetail {
     }
 
     // Copy constructor
-    public RunDetail(RunDetail runDetail) {
-        this(runDetail.maximumSpeed, runDetail.averageSpeed, runDetail.runDuration,
-                runDetail.totalDistance, runDetail.elevation, runDetail.slope);
+    public RunDetailStats(RunDetailStats runDetailStats) {
+        this(runDetailStats.maximumSpeed, runDetailStats.averageSpeed, runDetailStats.runDuration,
+                runDetailStats.totalDistance, runDetailStats.elevation, runDetailStats.slope);
     }
 
     // Constructors for partial information
-    public RunDetail(String maximumSpeed, double totalDistance) {
+    public RunDetailStats(String maximumSpeed, double totalDistance) {
         this(maximumSpeed, null, null, totalDistance, 0, 0);
     }
 
