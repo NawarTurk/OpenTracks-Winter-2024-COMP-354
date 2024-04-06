@@ -831,4 +831,9 @@ limitations under the License.
     <string name="lift_specific_moving_time">00:55:17</string>
     <string name="lift_specific_moving_time_label">Moving Time</string>
     <string name="lift_specific_moving_time_unit">hr</string>
+    <string name="specific_stats_button">L/R stats</string>
+    <string name="recycler_text">recycler text</string>
+    <string name="lift_run_switch">Lift/Run</string>
+    <string name="test">this is the recycler text</string>
+    <string name="lift_specific_avg_speed_unit">km/h</string>
 </resources>

@@ -1,9 +1,12 @@
 package de.dennisguse.opentracks.ui.aggregatedStatistics;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Switch;
 
 import androidx.annotation.NonNull;
@@ -66,6 +69,25 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
         toggleAdapter();
 
         setSupportActionBar(viewBinding.bottomAppBarLayout.bottomAppBar);
+
+        Button specificStatsButton = findViewById(R.id.specific_stats_button);
+        if (specificStatsButton != null){
+            specificStatsButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    displayLiftSpecificStats();
+                }
+            });
+        }
+        else{
+            Log.e("AggregatedStatisticsActivity", "specificStatsButton is null because it's not found in the layout.");
+        }
+
+    }
+
+    private void displayLiftSpecificStats() {
+        Intent intent = new Intent(AggregatedStatisticsActivity.this, LiftStatsActivity.class);
+        startActivity(intent);
     }
 
     private void toggleAdapter() {
