@@ -22,6 +22,15 @@
         app:layout_constraintTop_toBottomOf="@id/maximum_speed_label"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <TextView
+        android:id="@+id/maximum_speed_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/maximum_speed_unit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/maximum_speed_value"
+        android:layout_marginStart="8dp" />
+
     <!-- Average Speed -->
     <TextView
         android:id="@+id/average_speed_label"
@@ -38,6 +47,15 @@
         android:text="@string/average_speed_value"
         app:layout_constraintTop_toBottomOf="@id/average_speed_label"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/average_speed_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/average_speed_unit"
+        app:layout_constraintTop_toBottomOf="@id/average_speed_label"
+        app:layout_constraintStart_toEndOf="@id/average_speed_value"
+        android:layout_marginStart="8dp" />
 
     <!-- Run Duration -->
     <TextView
@@ -56,6 +74,7 @@
         app:layout_constraintTop_toBottomOf="@id/run_duration_label"
         app:layout_constraintStart_toStartOf="parent"/>
 
+
     <!-- Total Distance -->
     <TextView
         android:id="@+id/total_distance_label"
@@ -73,22 +92,66 @@
         app:layout_constraintTop_toBottomOf="@id/total_distance_label"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- Elevation Profile -->
     <TextView
-        android:id="@+id/elevation_profile_label"
+        android:id="@+id/total_distance_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/elevation_profile_label"
+        android:text="@string/total_distance_unit"
+        app:layout_constraintBaseline_toBaselineOf="@id/total_distance_value"
+        app:layout_constraintStart_toEndOf="@id/total_distance_value"
+        android:layout_marginStart="8dp" />
+
+    <!-- Elevation -->
+    <TextView
+        android:id="@+id/elevation_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/elevation_label"
         app:layout_constraintTop_toBottomOf="@id/total_distance_value"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- This could be an ImageView if you have a graphical representation, or a TextView if it's just a value -->
     <TextView
-        android:id="@+id/elevation_profile_value"
+        android:id="@+id/elevation_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/elevation_profile_value"
-        app:layout_constraintTop_toBottomOf="@id/elevation_profile_label"
+        android:text="@string/elevation_value"
+        app:layout_constraintTop_toBottomOf="@id/elevation_label"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/elevation_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/elevation_unit"
+        app:layout_constraintBaseline_toBaselineOf="@id/elevation_value"
+        app:layout_constraintStart_toEndOf="@id/elevation_value"
+        android:layout_marginStart="8dp" />
+
+    <!-- Slope -->
+    <TextView
+        android:id="@+id/slope_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slope_label"
+        app:layout_constraintTop_toBottomOf="@id/elevation_value"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/slope_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slope_value"
+        app:layout_constraintTop_toBottomOf="@id/slope_label"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/slope_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slope_unit"
+        app:layout_constraintBaseline_toBaselineOf="@id/slope_value"
+        app:layout_constraintStart_toEndOf="@id/slope_value"
+        android:layout_marginStart="8dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

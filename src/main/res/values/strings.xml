@@ -842,20 +842,25 @@ limitations under the License.
     <string name="average_speed_label">Average Speed</string>
     <string name="run_duration_label">Run Duration</string>
     <string name="total_distance_label">Total Distance</string>
-    <string name="elevation_profile_label">Elevation Profile</string>
+    <string name="elevation_label">Elevation</string>
+    <string name="slope_label">Slope</string>
+
 
     <!-- Initial values for the run statistics  -->
-    <string name="maximum_speed_value">0 km/h</string>
-    <string name="average_speed_value">0 km/h</string>
+    <string name="maximum_speed_value">0</string>
+    <string name="average_speed_value">0</string>
     <string name="run_duration_value">00:00:00</string>
-    <string name="total_distance_value">0 km</string>
-    <string name="elevation_profile_value">Not available</string>
+    <string name="total_distance_value">0</string>
+    <string name="elevation_value">N/A</string> <!-- Assuming elevation might not always be applicable -->
+    <string name="slope_value">N/A</string> <!-- Assuming slope might not always be applicable -->
+
 
     <!-- Units for the run statistics  -->
-    <string name="speed_unit_km_h">km/h</string>
-    <string name="distance_unit_km">km</string>
-    <string name="time_unit_hours">hr</string>
-
+    <string name="maximum_speed_unit">km/h</string>
+    <string name="average_speed_unit">km/h</string>
+    <string name="total_distance_unit">km</string>
+    <string name="elevation_unit">m</string> <!-- For meters -->
+    <string name="slope_unit">%</string>
 
 
 </resources>
