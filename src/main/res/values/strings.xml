@@ -292,7 +292,6 @@ limitations under the License.
     <!-- Marker List -->
     <string name="marker_list_empty_message">You don\'t have any markers</string>
     <!-- Menu -->
-    <string name="menu_aggregated_statistics">Aggregated stats</string>
     <string name="menu_friends">Friends</string>
     <string name="search">Search</string>
     <string name="invite">Invite</string>
@@ -864,6 +863,11 @@ limitations under the License.
     <string name="total_distance_unit">km</string>
     <string name="elevation_unit">m</string> <!-- For meters -->
     <string name="slope_unit">%</string>
+
+    <!-- Titles for the toolbar -->
+    <string name="title_daily">Daily Stats</string>
+    <string name="menu_aggregated_statistics">Aggregated Stats</string>
+
 
 
 </resources>

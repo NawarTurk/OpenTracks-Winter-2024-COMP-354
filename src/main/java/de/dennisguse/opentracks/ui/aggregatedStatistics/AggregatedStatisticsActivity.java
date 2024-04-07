@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -62,9 +64,21 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
 
         viewModel = new ViewModelProvider(this).get(AggregatedStatisticsModel.class);
 
+        // Find the toolbar from the layout and set it as the action bar
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         Switch dailySwitch = findViewById(R.id.aggregated_stats_daily_switch);
         dailySwitch.setOnCheckedChangeListener((compoundButton, switchState) -> {
             isDailyView = switchState;
+            // Change the toolbar title based on the state of the switch
+            if (switchState) {
+                // Daily view is active
+                toolbar.setTitle(R.string.title_daily); // Set title for daily view
+            } else {
+                // Aggregated view is active
+                toolbar.setTitle(R.string.menu_aggregated_statistics); // Set title for aggregated view
+            }
             toggleAdapter();
         });
         toggleAdapter();
