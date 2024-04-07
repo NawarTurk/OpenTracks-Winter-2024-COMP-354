@@ -42,7 +42,7 @@
         tools:srcCompat="@drawable/ic_activity_skiing_24dp" />
 
     <TextView
-        android:id="@+id/lift_name"
+        android:id="@+id/run_name"
         style="@style/TextAppearance.OpenTracks.PrimaryHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/maximum_speed_value"
-        app:layout_constraintTop_toBottomOf="@+id/lift_name" />
+        app:layout_constraintTop_toBottomOf="@+id/run_name" />
 
     <TextView
         android:id="@+id/total_distance_value"

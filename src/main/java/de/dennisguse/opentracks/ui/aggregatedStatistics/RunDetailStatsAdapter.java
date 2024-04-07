@@ -46,6 +46,7 @@ public class RunDetailStatsAdapter extends RecyclerView.Adapter<RunDetailStatsAd
         }
 
         void bind(RunDetailStats runDetailStats) {
+            binding.runName.setText(runDetailStats.getRunName());
             binding.maximumSpeedValue.setText(runDetailStats.getMaximumSpeed());
             binding.averageSpeedValue.setText(runDetailStats.getAverageSpeed());
             binding.runDurationValue.setText(runDetailStats.getRunDuration());

@@ -47,7 +47,7 @@ public class LiftStatsActivity extends AbstractActivity {
         //Test purpose only, will use actual data once confirmed with Group 7
         List<RunDetailStats> testRunData = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
-            testRunData.add(new RunDetailStats("500km", i * 10.0));
+            testRunData.add(new RunDetailStats("Run " + i,"500km", i * 10.0));
         }
 
         // Makes the back button work correctly
