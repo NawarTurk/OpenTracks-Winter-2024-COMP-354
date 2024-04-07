@@ -838,6 +838,7 @@ limitations under the License.
     <string name="lift_statistics">Lift Specific Statistics</string>
     <string name="run_statistics">Run Specific Statistics</string>
 
+    <string name="run_name">Run Name</string>
 
     <!-- Labels for the run statistics -->
     <string name="maximum_speed_label">Maximum Speed</string>

@@ -1,157 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp">
 
     <!-- Maximum Speed -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="8dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50121653" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="8dp" />
+
+<!--- activity icon -->
+    <ImageView
+        android:id="@+id/lift_activity_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?android:textColorPrimary"
+        tools:srcCompat="@drawable/ic_activity_skiing_24dp" />
+
+    <TextView
+        android:id="@+id/lift_name"
+        style="@style/TextAppearance.OpenTracks.PrimaryHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lift_activity_icon"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toEndOf="@+id/lift_activity_icon"
+        app:layout_constraintTop_toTopOf="@+id/lift_activity_icon"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="@string/run_name" />
+
     <TextView
         android:id="@+id/maximum_speed_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/maximum_speed_label"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/maximum_speed_value" />
 
     <TextView
-        android:id="@+id/maximum_speed_value"
+        android:id="@+id/elevation_value"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/maximum_speed_value"
-        app:layout_constraintTop_toBottomOf="@id/maximum_speed_label"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="8dp"
+        android:text="@string/elevation_value"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/total_distance_label" />
 
     <TextView
-        android:id="@+id/maximum_speed_unit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/maximum_speed_unit"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/maximum_speed_value"
-        android:layout_marginStart="8dp" />
-
-    <!-- Average Speed -->
-    <TextView
-        android:id="@+id/average_speed_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/average_speed_label"
-        app:layout_constraintTop_toBottomOf="@id/maximum_speed_value"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:id="@+id/total_distance_unit"
+        android:layout_width="26dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/total_distance_unit"
+        app:layout_constraintBaseline_toBaselineOf="@id/total_distance_value"
+        app:layout_constraintStart_toEndOf="@id/total_distance_value" />
 
     <TextView
-        android:id="@+id/average_speed_value"
+        android:id="@+id/slope_value"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/average_speed_value"
-        app:layout_constraintTop_toBottomOf="@id/average_speed_label"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:text="@string/slope_value"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/elevation_label" />
 
     <TextView
         android:id="@+id/average_speed_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:text="@string/average_speed_unit"
-        app:layout_constraintTop_toBottomOf="@id/average_speed_label"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/average_speed_value"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/maximum_speed_label" />
 
-    <!-- Run Duration -->
     <TextView
         android:id="@+id/run_duration_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/run_duration_label"
-        app:layout_constraintTop_toBottomOf="@id/average_speed_value"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/run_duration_value" />
+
+    <TextView
+        android:id="@+id/average_speed_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/average_speed_label"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/average_speed_value" />
+
+    <TextView
+        android:id="@+id/elevation_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/elevation_label"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/elevation_value" />
 
     <TextView
         android:id="@+id/run_duration_value"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/run_duration_value"
-        app:layout_constraintTop_toBottomOf="@id/run_duration_label"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-    <!-- Total Distance -->
-    <TextView
-        android:id="@+id/total_distance_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/total_distance_label"
-        app:layout_constraintTop_toBottomOf="@id/run_duration_value"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/total_distance_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/total_distance_value"
-        app:layout_constraintTop_toBottomOf="@id/total_distance_label"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/total_distance_unit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/total_distance_unit"
-        app:layout_constraintBaseline_toBaselineOf="@id/total_distance_value"
-        app:layout_constraintStart_toEndOf="@id/total_distance_value"
-        android:layout_marginStart="8dp" />
-
-    <!-- Elevation -->
-    <TextView
-        android:id="@+id/elevation_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/elevation_label"
-        app:layout_constraintTop_toBottomOf="@id/total_distance_value"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/elevation_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/elevation_value"
-        app:layout_constraintTop_toBottomOf="@id/elevation_label"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/average_speed_label" />
 
     <TextView
         android:id="@+id/elevation_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/elevation_unit"
         app:layout_constraintBaseline_toBaselineOf="@id/elevation_value"
-        app:layout_constraintStart_toEndOf="@id/elevation_value"
-        android:layout_marginStart="8dp" />
-
-    <!-- Slope -->
-    <TextView
-        android:id="@+id/slope_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/slope_label"
-        app:layout_constraintTop_toBottomOf="@id/elevation_value"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/elevation_value" />
 
     <TextView
-        android:id="@+id/slope_value"
+        android:id="@+id/maximum_speed_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/slope_value"
-        app:layout_constraintTop_toBottomOf="@id/slope_label"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/maximum_speed_unit"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/maximum_speed_value"
+        app:layout_constraintTop_toBottomOf="@+id/lift_name" />
+
+    <TextView
+        android:id="@+id/total_distance_value"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/total_distance_value"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/total_distance_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/total_distance_label"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/total_distance_value" />
 
     <TextView
         android:id="@+id/slope_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/slope_unit"
         app:layout_constraintBaseline_toBaselineOf="@id/slope_value"
-        app:layout_constraintStart_toEndOf="@id/slope_value"
-        android:layout_marginStart="8dp" />
+        app:layout_constraintStart_toEndOf="@id/slope_value" />
+
+    <TextView
+        android:id="@+id/slope_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/slope_label"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/slope_value" />
+
+    <TextView
+        android:id="@+id/average_speed_value"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/average_speed_value"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/maximum_speed_label" />
+
+    <TextView
+        android:id="@+id/maximum_speed_value"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/maximum_speed_value"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Average Speed -->
+
+    <!-- Run Duration -->
+
+
+    <!-- Total Distance -->
+
+    <!-- Elevation -->
+
+    <!-- Slope -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
