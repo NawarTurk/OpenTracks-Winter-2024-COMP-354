@@ -10,21 +10,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomappbar.BottomAppBar;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import de.dennisguse.opentracks.AbstractActivity;
 import de.dennisguse.opentracks.R;
 import de.dennisguse.opentracks.databinding.AggregatedStatsBinding;
+import de.dennisguse.opentracks.databinding.FriendsPageBinding;
 import de.dennisguse.opentracks.databinding.LiftRunStatsBinding;
 import de.dennisguse.opentracks.databinding.LiftStatsBinding;
 
-public class LiftStatsActivity extends AppCompatActivity {
+public class LiftStatsActivity extends AbstractActivity {
     private boolean isRun = false;
     private LiftStatsActivityAdapter liftAdapter;
     private RunDetailStatsAdapter runAdapter;
     private RecyclerView recyclerView;
     private MaterialToolbar title;
+
+    private LiftStatsBinding viewBinding;
+
 
 
     @Override
@@ -43,6 +49,10 @@ public class LiftStatsActivity extends AppCompatActivity {
         for (int i = 1; i <= 5; i++) {
             testRunData.add(new RunDetailStats("500km", i * 10.0));
         }
+
+        // Makes the back button work correctly
+        BottomAppBar bottomAppBar = findViewById(R.id.bottom_app_bar_layout).findViewById(R.id.bottom_app_bar);
+        setSupportActionBar(bottomAppBar);
 
         liftAdapter = new LiftStatsActivityAdapter(this, testLiftData);
         runAdapter = new RunDetailStatsAdapter(this, testRunData);
@@ -71,5 +81,11 @@ public class LiftStatsActivity extends AppCompatActivity {
             recyclerView.setAdapter(liftAdapter);
             title.setTitle(R.string.lift_statistics);
         }
+    }
+
+    @Override
+    protected View getRootView() {
+        viewBinding = LiftStatsBinding.inflate(getLayoutInflater());
+        return viewBinding.getRoot();
     }
 }
