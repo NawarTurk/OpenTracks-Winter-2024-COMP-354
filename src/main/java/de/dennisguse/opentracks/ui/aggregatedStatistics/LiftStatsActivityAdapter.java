@@ -56,8 +56,6 @@ public class LiftStatsActivityAdapter extends RecyclerView.Adapter<LiftStatsActi
 //        holder.binding.liftSpecificMovingTime.setText(String.valueOf(liftStatsList.get(position).getMovingTime()));
         holder.binding.liftSpecificMovingTimeUnit.setText(context.getString(R.string.lift_specific_moving_time_unit));
         holder.binding.liftSpecificMovingTimeLabel.setText(context.getString(R.string.lift_specific_moving_time_label));
-
-        holder.binding.liftHorizontalLine.setVisibility(View.VISIBLE);
     }
 
     @Override

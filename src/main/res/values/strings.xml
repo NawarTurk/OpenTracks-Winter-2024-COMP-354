@@ -830,6 +830,7 @@ limitations under the License.
     <string name="lift_specific_moving_time">00:55:17</string>
     <string name="lift_specific_moving_time_label">Moving Time</string>
     <string name="lift_specific_moving_time_unit">hr</string>
+    <string name="lift_specific_icon_description">Activity Icon</string>
     <string name="specific_stats_button">L/R stats</string>
     <string name="recycler_text">recycler text</string>
     <string name="lift_run_switch">Lift/Run</string>
@@ -847,6 +848,7 @@ limitations under the License.
     <string name="total_distance_label">Total Distance</string>
     <string name="elevation_label">Elevation</string>
     <string name="slope_label">Slope</string>
+    <string name="run_activity_icon">Activity Icon</string>
 
 
     <!-- Initial values for the run statistics  -->

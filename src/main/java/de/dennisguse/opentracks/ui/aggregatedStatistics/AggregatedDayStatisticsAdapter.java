@@ -26,7 +26,7 @@ import de.dennisguse.opentracks.util.StringUtils;
 public class AggregatedDayStatisticsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private AggregatedStatistics aggregatedStatistics;
-    private SimpleDateFormat formatter = new SimpleDateFormat("MM dd yyy");
+    private SimpleDateFormat formatter = new SimpleDateFormat("MMMM d yyyy");
 
     private final Context context;
     private OnButtonClickListener listener;

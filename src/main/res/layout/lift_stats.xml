@@ -4,19 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:paddingEnd="8dp"
-    android:paddingStart="8dp"
-    android:paddingBottom="8dp">
-
-    <!-- Guidelines -->
+    android:padding="16dp">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="8dp" />
+        app:layout_constraintGuide_end="8dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -30,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="8dp" />
+        app:layout_constraintGuide_begin="8dp" />
 
     <ImageView
         android:id="@+id/lift_activity_icon"
@@ -41,7 +36,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="?android:textColorPrimary"
-        tools:srcCompat="@drawable/ic_activity_skiing_24dp" />
+        tools:srcCompat="@drawable/ic_activity_skiing_24dp"
+        android:contentDescription="@string/lift_specific_icon_description" />
 
     <!-- Average Speed -->
 
@@ -221,45 +217,6 @@
         tools:text="@string/lift_specific_moving_time_label" />
 
     <!--  ************************* The End of Lift Specific Stats ************************************* -->
-
-    <View
-        android:id="@+id/aggregated_stats_horizontal_line"
-        style="@style/HorizontalLine"
-        android:layout_marginTop="348dp"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintStart_toEndOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/lift_activity_icon" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lift_guideline1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="8dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lift_guideline2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.50121653" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lift_guideline3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="8dp" />
-
-    <View
-        android:id="@+id/lift_horizontal_line"
-        style="@style/HorizontalLine"
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:layout_marginTop="348dp"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintStart_toEndOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/lift_specific_elevation_gain_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

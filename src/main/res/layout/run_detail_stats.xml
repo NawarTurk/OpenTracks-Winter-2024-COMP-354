@@ -6,8 +6,6 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
-    <!-- Maximum Speed -->
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="0dp"
@@ -39,7 +37,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="?android:textColorPrimary"
-        tools:srcCompat="@drawable/ic_activity_skiing_24dp" />
+        tools:srcCompat="@drawable/ic_activity_skiing_24dp"
+        android:contentDescription="@string/run_activity_icon" />
 
     <TextView
         android:id="@+id/run_name"
@@ -244,17 +243,5 @@
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Average Speed -->
-
-    <!-- Run Duration -->
-
-
-    <!-- Total Distance -->
-
-    <!-- Elevation -->
-
-    <!-- Slope -->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

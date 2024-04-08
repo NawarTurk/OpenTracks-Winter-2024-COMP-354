@@ -83,7 +83,7 @@ public class AggregatedStatistics {
     @VisibleForTesting
     public void aggregateDays(@NonNull Track track) {
         String activityTypeLocalized = track.getActivityTypeLocalized();
-        SimpleDateFormat formatter = new SimpleDateFormat("MM dd yyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("MMMM d yyyy");
         String day = formatter.format(Date.from(track.getTrackStatistics().getStopTime()));
         String combinedKey = day + " - " + activityTypeLocalized;
         if (dataMap.containsKey(combinedKey)) {
