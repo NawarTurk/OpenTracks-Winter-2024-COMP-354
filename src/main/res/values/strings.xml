@@ -820,6 +820,9 @@ limitations under the License.
     <string name="daily_max_speed_label">MAX SPEED</string>
     <string name="daily_max_speed_number">0</string>
     <string name="daily_max_speed_unit">km/h</string>
+    <string name="daily_temperature_label">TEMPERATURE</string>
+    <string name="daily_temperature_unit">°C</string>
+    <string name="daily_temperature_number">-18</string>
     <string name="lift_name">Lift Name</string>
     <string name="lift_specific_elevation_gain_unit">km</string>
     <string name="lift_specific_elevation_gain_label">Elevation Gain</string>

@@ -202,6 +202,11 @@ public class AggregatedDayStatisticsAdapter extends RecyclerView.Adapter<Recycle
             //Activity type
             viewBinding.activityTypeLabel.setText(String.valueOf(aggregatedStatistic.getActivityTypeLocalized()));
 
+            //Temperature
+            viewBinding.dailyTemperatureNumber.setText(context.getString(R.string.daily_temperature_number)); //hardcoded for now
+            viewBinding.dailyTemperatureUnit.setText(context.getString(R.string.daily_temperature_unit));
+            viewBinding.dailyTemperatureLabel.setText(context.getString(R.string.daily_temperature_label));
+
         }
 
 

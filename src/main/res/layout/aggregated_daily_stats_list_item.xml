@@ -208,10 +208,10 @@
         style="@style/TextAppearance.OpenTracks.PrimaryUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/daily_total_distance_label" />
 
@@ -233,9 +233,9 @@
         style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_run_number_label"
         tools:text="@string/daily_total_distance_number" />
@@ -254,18 +254,18 @@
         app:layout_constraintTop_toBottomOf="@+id/daily_stats_max_speed_label"
         tools:text="@string/daily_run_number_unit" />
 
+
     <TextView
         android:id="@+id/daily_total_distance_unit"
         style="@style/TextAppearance.OpenTracks.PrimaryUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/daily_total_distance_number"
         app:layout_constraintTop_toBottomOf="@+id/daily_run_number"
         tools:text="@string/daily_total_distance_unit" />
-
 
     <TextView
         android:id="@+id/daily_run_max_vertical"
@@ -312,10 +312,10 @@
         style="@style/TextAppearance.OpenTracks.PrimaryUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/daily_max_speed_label" />
 
@@ -336,9 +336,9 @@
         style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daily_run_number_label"
         tools:text="@string/daily_max_speed_number" />
@@ -385,9 +385,50 @@
     <View
         android:id="@+id/aggregated_stats_horizontal_line"
         style="@style/HorizontalLine"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="400dp"
         app:layout_constraintEnd_toStartOf="@id/guideline3"
         app:layout_constraintStart_toEndOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/aggregated_stats_num_day_tracks" />
+
+    <!-- Daily Temperature -->
+
+    <TextView
+        android:id="@+id/daily_temperature_label"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_temperature_number"
+        tools:text="@string/daily_temperature_label" />
+
+
+    <TextView
+        android:id="@+id/daily_temperature_number"
+        style="@style/TextAppearance.OpenTracks.PrimaryValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daily_max_speed_label"
+        tools:text="@string/daily_temperature_number" />
+
+    <TextView
+        android:id="@+id/daily_temperature_unit"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/daily_temperature_number"
+        app:layout_constraintTop_toBottomOf="@+id/daily_max_speed_label"
+        tools:text="@string/daily_temperature_unit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
