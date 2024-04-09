@@ -73,11 +73,10 @@
         style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@id/aggregated_stats_distance_unit"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/activity_icon"
-        tools:layout_editor_absoluteX="52dp"
         tools:text="100000" />
 
     <!-- Time -->
@@ -108,7 +107,7 @@
         style="@style/TextAppearance.OpenTracks.SecondaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/aggregated_stats_avg_rate_unit"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@id/aggregated_stats_distance"
@@ -143,7 +142,7 @@
         style="@style/TextAppearance.OpenTracks.SecondaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/aggregated_stats_max_rate_unit"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@id/aggregated_stats_time"
@@ -196,11 +195,12 @@
         style="@style/TextAppearance.OpenTracks.PrimaryValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="10%"
+        android:layout_marginTop="20dp"
+
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_max_rate_label" />
+        app:layout_constraintTop_toBottomOf="@+id/aggregated_stats_avg_rate_label" />
 
     <!-- Waxing Section -->
 
